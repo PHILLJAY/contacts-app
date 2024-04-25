@@ -1,10 +1,10 @@
-require("dotenv").config();
-const express = require("express");
-const { MongoClient, ServerApiVersion } = require("mongodb");
+import "dotenv/config"; // Import and configure dotenv
+import express from "express";
+import { MongoClient, ServerApiVersion } from "mongodb";
+import cors from "cors";
 const password = process.env.MONGODB_PASSWORD;
 const uri = `mongodb+srv://philipjasionowski:${password}@contactappcluster.pwqh3ff.mongodb.net/contactsDB/?retryWrites=true&w=majority&appName=contactAppCluster`;
 const app = express();
-const cors = require("cors");
 const corsOptions = {
   origin: "http://localhost:3000",
 };

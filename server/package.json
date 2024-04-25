@@ -2,7 +2,7 @@
   "name": "contacts-app",
   "version": "1.0.0",
   "description": "App that hosts contacts for MEEE :333",
-  "main": "index.js",
+  "main": "app.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
