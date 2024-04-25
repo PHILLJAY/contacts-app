@@ -3,6 +3,12 @@ const express = require("express");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const password = process.env.MONGODB_PASSWORD;
 const uri = `mongodb+srv://philipjasionowski:${password}@contactappcluster.pwqh3ff.mongodb.net/contactsDB/?retryWrites=true&w=majority&appName=contactAppCluster`;
+const app = express();
+const cors = require("cors");
+const corsOptions = {
+  origin: "http://localhost:3000",
+};
+app.use(cors(corsOptions)); // Enable CORS for all routes
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -12,8 +18,6 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   },
 });
-
-const app = express();
 
 client
   .connect()
